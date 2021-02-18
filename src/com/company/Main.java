@@ -31,9 +31,27 @@ public class Main {
                 array[i] = array[i - 1];
             }
         }
-        System.out.println();
+            System.out.println();
             for (int i = 0; i < array.length; i++) {
                 System.out.print(" " + array[i]);
+            }
+
+            //найти общий префикс
+            String[] strings = {"abc","abcd","abcde","abco","abrakadabra"};
+            int counter = -1;
+            boolean goOn = true;
+            while (goOn) {
+
+                for (int i = 0; i < strings.length; i++) {
+                    counter++;
+                    if (strings[i].charAt(counter) != strings[0].charAt(counter)) {
+                        goOn = false;
+                        break;
+                    }
+                }
+                System.out.println(counter);
+
+                System.out.println(strings[0].substring(0,counter));
             }
     }
 }
